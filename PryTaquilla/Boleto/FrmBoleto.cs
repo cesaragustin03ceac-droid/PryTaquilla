@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,18 @@ namespace PryTaquilla.Boleto
             }
             else if (categoriaSeleccionada == "Adulto Mayor")
             {
-                
+
+                string nombreCliente = "Cliente Prueba";
+                int edadCliente = 70; 
+
+                if (edadCliente >= 65)
+                {
+                    miBoleto = new BoletoAdultoMayor(nombreCliente, cantidadBoletos, costoBase, edadCliente);
+                }
+                else
+                {
+                    MessageBox.Show("El cliente debe tener 65 años o más para aplicar a esta categoría.", "Edad no válida");
+                }
             }
             else if (categoriaSeleccionada == "General")
             {
