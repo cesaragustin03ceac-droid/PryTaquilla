@@ -34,7 +34,7 @@ namespace PryTaquilla.Boleto
             }
             else if (categoriaSeleccionada == "General")
             {
-                
+                miBoleto = new BoletoGeneral(" Boleto General ", cantidadBoletos, costoBase);
             }
 
             
