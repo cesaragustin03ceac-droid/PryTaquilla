@@ -11,9 +11,7 @@ namespace PryTaquilla.Boleto
             get; set; 
         }
 
-        public BoletoAdultoMayor(string _nombre, int _cantidad, float _precio, int _edad)
-
-            : base(_nombre, _cantidad, _precio)
+        public BoletoAdultoMayor(string _nombre, int _cantidad, float _precio, int _edad): base(_nombre, _cantidad, _precio)
         {
             Edad = _edad;
         }
