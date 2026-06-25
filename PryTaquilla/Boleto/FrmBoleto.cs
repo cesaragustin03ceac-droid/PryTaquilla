@@ -27,7 +27,8 @@ namespace PryTaquilla.Boleto
 
             if (categoriaSeleccionada == "Estudiante")
             {
-               
+                miBoleto = new BoletoEstudiante("", cantidadBoletos, costoBase, "");
+
             }
             else if (categoriaSeleccionada == "Adulto Mayor")
             {
@@ -49,15 +50,23 @@ namespace PryTaquilla.Boleto
                 miBoleto = new BoletoGeneral(" Boleto General ", cantidadBoletos, costoBase);
             }
 
-            
+
             if (miBoleto != null)
             {
                 float totalAPagar = miBoleto.CalcularPrecioFinal();
-                MessageBox.Show("Total a pagar: $" + totalAPagar.ToString("0.00"), "Compra Exitosa");
+
+                string resumenCompra = $"Categoría seleccionada: {categoriaSeleccionada}\r\n" +
+                                       $"Cantidad de boletos: {miBoleto.cantidad}\r\n" +
+                                       $"Costo base: ${miBoleto.precio}\r\n" +
+
+                                       $"---------------------------\r\n" +
+                                       $"Total a pagar: ${totalAPagar.ToString("0.00")}";
+
+                MessageBox.Show(resumenCompra, "Ticket de Compra");
             }
             else
             {
-                MessageBox.Show("Por favor, selecciona una categoría válida antes de comprar.", "Atención");
+                MessageBox.Show("Por favor, selecciona una categoría válida antes de calcular.", "Atención");
             }
         }
     }
