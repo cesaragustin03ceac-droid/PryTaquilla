@@ -16,7 +16,7 @@ namespace PryTaquilla.Boleto
         }
         public override float CalcularPrecioFinal()
         {
-            return Cantidad*Precio;
+            return Cantidad * Precio;
         }
     }
 }
